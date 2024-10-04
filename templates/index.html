@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Research Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Medical ERP - Research Assistant</h1>
+        </header>
+        <main>
+            <section id="left-panel">
+                <div id="kb-builder">
+                    <h2>Build Knowledge Base</h2>
+                    <input type="text" id="query-input" placeholder="Enter your research query">
+                    <div id="source-options">
+                        <label><input type="checkbox" name="source" value="pubmed" checked> PubMed</label>
+                        <label><input type="checkbox" name="source" value="google_scholar"> Google Scholar</label>
+                        <label><input type="checkbox" name="source" value="wikipedia"> Wikipedia</label>
+                        <label><input type="checkbox" name="source" value="internet"> Internet</label>
+                    </div>
+                    <input type="file" id="pdf-upload" accept=".pdf">
+                    <button id="build-kb-btn">Build Knowledge Base</button>
+                </div>
+                <div id="prescription-analyzer">
+                    <h2>Analyze Prescription</h2>
+                    <input type="file" id="prescription-upload" accept="image/*">
+                    <button id="analyze-prescription-btn">Analyze Prescription</button>
+                </div>
+                <div id="process-log">
+                    <h2>Process Log</h2>
+                    <div id="log-content"></div>
+                </div>
+            </section>
+            <section id="right-panel">
+                <div id="summary-area">
+                    <h2>Summary</h2>
+                    <div id="summary-content"></div>
+                </div>
+                <div id="chat-interface">
+                    <h2>Chat</h2>
+                    <div id="chat-messages"></div>
+                    <div id="chat-input-area">
+                        <input type="text" id="chat-input" placeholder="Ask a question">
+                        <button id="send-chat-btn">Send</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
